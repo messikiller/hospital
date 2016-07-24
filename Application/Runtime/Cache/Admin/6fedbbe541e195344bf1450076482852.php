@@ -30,10 +30,8 @@
 
 <?php if(session('is_admin') == true): ?><dl>
 			<dt>管理</dt>
-			<dd><a href="javascript:void(0);" target="content">asdasd</a></dd>
-			<dd><a href="javascript:void(0);" target="content">asdasd</a></dd>
-			<dd><a href="javascript:void(0);" target="content">asdasd</a></dd>
-			<dd><a href="javascript:void(0);" target="content">asdasd</a></dd>
+			<dd><a href="javascript:void(0);" target="content">添加课程</a></dd>
+			<dd><a href="javascript:void(0);" target="content">评教统计</a></dd>
 		</dl><?php endif; ?>
 
 	</div>

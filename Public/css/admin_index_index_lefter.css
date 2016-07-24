@@ -6,6 +6,10 @@
 	color: white;
 }
 
+.lefter dl{
+	margin-bottom: 0px;
+}
+
 .lefter dt{
 	padding: 10px 15px 10px 20px;
 	background-color: #1a1a1a;
