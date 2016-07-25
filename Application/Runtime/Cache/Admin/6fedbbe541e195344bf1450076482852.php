@@ -5,11 +5,12 @@
 	<title>admin</title>
 
 	<link href="/hospital/Public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/hospital/Public/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/hospital/Public/css/admin_index_index.css" rel="stylesheet">
 	<link href="/hospital/Public/css/admin_index_index_lefter.css" rel="stylesheet">
 </head>
 <body>
-	
+
 <div id="header">
 	<span class="header-left logo">hospital</span>
 	<a href="javascript:void(0);" class="header-right header-btn" id="logout-btn">退出</a>
@@ -29,14 +30,14 @@
 		</dl>
 
 <?php if(session('is_admin') == true): ?><dl>
-			<dt>管理</dt>
+			<dt><i class="fa fa-gear fa-lg"></i>&nbsp管理</dt>
 			<dd><a href="javascript:void(0);" target="content">添加课程</a></dd>
 			<dd><a href="javascript:void(0);" target="content">评教统计</a></dd>
 		</dl><?php endif; ?>
 
 	</div>
 	<div class="main">
-		<iframe name="content" class="content-frame" src="#" frameborder="0"></iframe>
+		<iframe name="content" class="content-frame" src="" frameborder="0"></iframe>
 	</div>
 </div>
 
