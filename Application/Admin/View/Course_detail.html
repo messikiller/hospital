@@ -1,0 +1,59 @@
+<extend name="Content/layout" />
+
+<block name="module-name">管理</block>
+<block name="page-name">课程统计</block>
+
+<block name="content">
+
+<div style="width:700px;display:none;" id="error-info">
+    <div class="alert alert-small alert-dismissible" role="alert">
+      <i class="iconfont alert-icon"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <p id="error-text"></p>
+    </div>
+</div>
+
+<div style="width:500px;">
+    <table class="table table-bordered">
+        <tr>
+            <th>序号</th>
+            <th>课程</th>
+        </tr>
+
+        <php>$index=1;</php>
+
+        <volist name="list" id="data">
+            <tr>
+                <td>{$index++}</td>
+                <td>{$data.course_name}</td>
+                <td>
+                    <button data-url="{:U('admin/course/delete')}" data-id="{$data.id}" class="btn btn-sm btn-danger btn-delete">删除</button>
+                </td>
+            </tr>
+        </volist>
+
+    </table>
+</div>
+
+</block>
+<block name="own-js">
+<script type="text/javascript">
+$('.btn-delete').click(function(){
+    if (confirm('确定删除这条记录？')){
+        var url = $(this).attr('data-url');
+        var id  = $(this).attr('data-id');
+        $.get(url, {'id':id}, function(data){
+            if (data.status==1) {
+                $('#error-info .alert').removeClass().addClass('alert alert-small alert-dismissible alert-success');
+                $('#error-info .iconfont').removeClass().addClass('iconfont alert-icon icon-success');
+                $('#error-info #error-text').text('删除记录成功！');
+            } else {
+                $('#error-info .alert').removeClass().addClass('alert alert-small alert-dismissible alert-danger');
+                $('#error-info .iconfont').removeClass().addClass('iconfont alert-icon icon-danger');
+                $('#error-info #error-text').text(' 删除记录失败！');
+            }
+        });
+    }
+});
+</script>
+</block>

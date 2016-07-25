@@ -52,7 +52,7 @@ class LoginController extends Controller
     	session('user_id',  $user_id);
         session('is_admin', $is_admin);
 
-    	alert_go('登录成功！', 'admin/index/index');
+		$this->redirect('admin/index/index');
     }
 
     public function register()
@@ -79,7 +79,7 @@ class LoginController extends Controller
     	}
 
     	$userModel = M('user');
-    	
+
     	$userArr = $userModel->where(array('username' => $username))->find();
     	if ($userArr) {
     		alert_go('用户名已经存在！', 'admin/login/register');
@@ -89,13 +89,13 @@ class LoginController extends Controller
 
     	$userData = array('username' => $username, 'o_time' => $time);
     	$user_id = $userModel->add($userData);
-    	
+
     	if (! $user_id) {
     		alert_go('创建用户失败！', 'admin/login/register');
     	}
 
     	$authModel = M('auth');
-    	
+
     	$authData = array('user_id' => $user_id, 'password' => md5($password));
     	$authModel->add($authData);
 

@@ -21,18 +21,19 @@
 	<div class="lefter">
 		<dl>
 			<dt>选课</dt>
-			<dd><a href="javascript:void(0);" target="content">我要选课</a></dd>
-			<dd><a href="javascript:void(0);" target="content">查看已选</a></dd>
+			<dd><a href="<?php echo U('admin/course/select');?>" target="content">我要选课</a></dd>
+			<dd><a href="<?php echo U('admin/course/view');?>" target="content">查看已选</a></dd>
 
 			<dt>评教</dt>
-			<dd><a href="javascript:void(0);" target="content">我要评教</a></dd>
-			<dd><a href="javascript:void(0);" target="content">查看已评</a></dd>
+			<dd><a href="<?php echo U('admin/comment/add');?>" target="content">我要评教</a></dd>
+			<dd><a href="<?php echo U('admin/comment/view');?>" target="content">查看已评</a></dd>
 		</dl>
 
 <?php if(session('is_admin') == true): ?><dl>
-			<dt><i class="fa fa-gear fa-lg"></i>&nbsp管理</dt>
-			<dd><a href="javascript:void(0);" target="content">添加课程</a></dd>
-			<dd><a href="javascript:void(0);" target="content">评教统计</a></dd>
+			<dt><i class="fa fa-gear"></i>&nbsp管理</dt>
+			<dd><a href="<?php echo U('admin/course/add');?>" target="content">添加课程</a></dd>
+			<dd><a href="<?php echo U('admin/course/detail');?>" target="content">课程统计</a></dd>
+			<dd><a href="<?php echo U('admin/comment/detail');?>" target="content">评教统计</a></dd>
 		</dl><?php endif; ?>
 
 	</div>
